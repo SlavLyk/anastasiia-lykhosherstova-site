@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Anastasiia Lykhosherstova</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 88px - 97px);
+    }
+    .about-image-col {
+      position: sticky;
+      top: 88px;
+      height: calc(100vh - 88px);
+      overflow: hidden;
+    }
+    .about-image-col img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(15%) contrast(1.05);
+    }
+    .about-image-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, transparent 70%, var(--dark));
+    }
+    .about-content-col {
+      padding: 72px 80px 72px 72px;
+      background: var(--dark);
+    }
+    .about-content-col .page-eyebrow { margin-bottom: 16px; }
+
+    .about-text {
+      font-size: 15px; line-height: 1.95;
+      color: rgba(247,243,236,0.58);
+      margin-bottom: 28px;
+    }
+    .about-text strong {
+      color: rgba(247,243,236,0.85);
+      font-weight: 400;
+    }
+
+    .stats-row {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 0;
+      border: 1px solid rgba(201,165,90,0.15);
+      margin: 52px 0;
+    }
+    .stat-box {
+      padding: 36px 28px;
+      border-right: 1px solid rgba(201,165,90,0.15);
+      text-align: center;
+    }
+    .stat-box:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 56px; font-weight: 300;
+      color: var(--gold); line-height: 1;
+      margin-bottom: 10px;
+    }
+    .stat-label {
+      font-size: 10px; letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(247,243,236,0.38);
+    }
+
+    .training-section { margin-top: 56px; }
+    .training-title {
+      font-size: 10px; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(201,165,90,0.15);
+    }
+    .training-item {
+      display: flex; gap: 28px; align-items: flex-start;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(247,243,236,0.06);
+    }
+    .training-year {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px; color: var(--gold);
+      min-width: 50px; padding-top: 2px;
+    }
+    .training-detail strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px; font-weight: 400;
+      color: var(--ivory); display: block;
+      margin-bottom: 4px;
+    }
+    .training-detail span {
+      font-size: 12px; color: rgba(247,243,236,0.4);
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 860px) {
+      .about-layout { grid-template-columns: 1fr; }
+      .about-image-col { position: relative; height: 50vw; min-height: 280px; top: 0; }
+      .about-content-col { padding: 48px 28px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <div class="about-layout">
+
+    <!-- Left: sticky image -->
+    <div class="about-image-col">
+      <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=900&q=80" alt="Anastasiia Lykhosherstova">
+      <div class="about-image-overlay"></div>
+    </div>
+
+    <!-- Right: content -->
+    <div class="about-content-col">
+      <div class="page-eyebrow reveal">The Artist</div>
+      <h1 class="reveal">Anastasiia<br><em>Lykhosherstova</em></h1>
+      <div class="gold-divider"></div>
+
+      <p class="about-text reveal">Born in Kyiv and trained at the conservatoire, Anastasiia has performed across concert halls and private estates from Prague to Paris. Her repertoire spans Baroque through to contemporary, with a <strong>rare ability to read the emotional need of each occasion.</strong></p>
+
+      <p class="about-text reveal">She brings not only technical precision but genuine warmth to every performance — the ability to make a room fall silent, or move an audience to tears with a single phrase. Whether accompanying a first kiss at the altar or filling a grand ballroom with sound, each performance is shaped with the same quiet care.</p>
+
+      <p class="about-text reveal">Her versatility is one of her most valued qualities. Classical, cinematic, contemporary pop — Anastasiia curates a repertoire unique to every event, always in conversation with the couple or host.</p>
+
+      <div class="stats-row">
+        <div class="stat-box reveal">
+          <div class="stat-num">12+</div>
+          <div class="stat-label">Years Performing</div>
+        </div>
+        <div class="stat-box reveal reveal-delay-1">
+          <div class="stat-num">350+</div>
+          <div class="stat-label">Events</div>
+        </div>
+        <div class="stat-box reveal reveal-delay-2">
+          <div class="stat-num">18</div>
+          <div class="stat-label">Countries</div>
+        </div>
+      </div>
+
+      <div class="training-section reveal">
+        <div class="training-title">Education & Training</div>
+        <div class="training-item">
+          <div class="training-year">2008</div>
+          <div class="training-detail">
+            <strong>Kyiv National Music Academy</strong>
+            <span>Violin Performance, First Class Honours</span>
+          </div>
+        </div>
+        <div class="training-item">
+          <div class="training-year">2012</div>
+          <div class="training-detail">
+            <strong>Prague Conservatoire</strong>
+            <span>Postgraduate Studies, Chamber Music</span>
+          </div>
+        </div>
+        <div class="training-item">
+          <div class="training-year">2015</div>
+          <div class="training-detail">
+            <strong>Masterclass — Maxim Vengerov</strong>
+            <span>International String Academy, Vienna</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 52px;" class="reveal">
+        <a href="contact.html" class="btn-primary">Book a Performance</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script src="shared.js"></script>
+</body>
+</html>

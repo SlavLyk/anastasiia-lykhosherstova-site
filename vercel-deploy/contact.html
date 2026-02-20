@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Anastasiia Lykhosherstova</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 88px - 97px);
+    }
+
+    /* Left panel */
+    .contact-left {
+      background: var(--charcoal);
+      padding: 80px 72px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      border-right: 1px solid rgba(201,165,90,0.1);
+    }
+    .contact-left-top { }
+    .contact-intro {
+      font-size: 15px; line-height: 1.9;
+      color: rgba(247,243,236,0.52);
+      margin-top: 24px; margin-bottom: 60px;
+      max-width: 380px;
+    }
+    .contact-detail-block {
+      margin-bottom: 36px;
+    }
+    .cd-label {
+      font-size: 9px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .cd-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-weight: 300;
+      color: var(--ivory);
+    }
+    .cd-note {
+      font-size: 12px; color: rgba(247,243,236,0.35);
+      margin-top: 4px; letter-spacing: 0.04em;
+    }
+
+    .social-row {
+      display: flex; gap: 20px;
+    }
+    .social-link {
+      font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(247,243,236,0.35);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,165,90,0.2);
+      padding-bottom: 3px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .social-link:hover { color: var(--gold); border-color: var(--gold); }
+
+    /* Right panel — form */
+    .contact-right {
+      background: var(--dark);
+      padding: 80px 72px;
+    }
+    .form-section-label {
+      font-size: 9px; letter-spacing: 0.28em;
+      text-transform: uppercase; color: rgba(247,243,236,0.3);
+      margin: 36px 0 20px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(201,165,90,0.1);
+    }
+    .form-section-label:first-of-type { margin-top: 0; border-top: none; padding-top: 0; }
+
+    .submit-btn {
+      width: 100%; margin-top: 8px;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 18px;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: none; cursor: pointer;
+      transition: background 0.25s;
+    }
+    .submit-btn:hover { background: var(--gold-light); }
+
+    .form-note {
+      font-size: 11px; color: rgba(247,243,236,0.25);
+      margin-top: 16px; letter-spacing: 0.04em; line-height: 1.7;
+      text-align: center;
+    }
+
+    /* Success state */
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 60px 0;
+    }
+    .success-msg .icon {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 60px; color: var(--gold);
+      margin-bottom: 20px; display: block;
+    }
+    .success-msg h3 { margin-bottom: 12px; }
+    .success-msg p { color: rgba(247,243,236,0.5); font-size: 14px; }
+
+    @media (max-width: 860px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-left { padding: 48px 28px; }
+      .contact-right { padding: 48px 28px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="page-hero">
+    <div class="page-eyebrow reveal">Get in Touch</div>
+    <h1 class="reveal">Book a <em>Performance</em></h1>
+  </div>
+
+  <div class="contact-layout">
+
+    <!-- Left info panel -->
+    <div class="contact-left">
+      <div class="contact-left-top">
+        <p class="contact-intro reveal">Whether you're planning a wedding, a special event, or a private occasion — I'd love to hear about it. All enquiries receive a response within 24 hours.</p>
+
+        <div class="contact-detail-block reveal">
+          <div class="cd-label">Email</div>
+          <div class="cd-value">hello@anastasiialyk.com</div>
+        </div>
+        <div class="contact-detail-block reveal reveal-delay-1">
+          <div class="cd-label">Based in</div>
+          <div class="cd-value">Prague</div>
+          <div class="cd-note">Available for travel across Europe</div>
+        </div>
+        <div class="contact-detail-block reveal reveal-delay-2">
+          <div class="cd-label">Booking Lead Time</div>
+          <div class="cd-value">2–3 months</div>
+          <div class="cd-note">Peak season dates (May–Sep) fill quickly</div>
+        </div>
+      </div>
+
+      <div class="social-row reveal">
+        <a href="#" class="social-link">Instagram</a>
+        <a href="#" class="social-link">Facebook</a>
+        <a href="#" class="social-link">YouTube</a>
+      </div>
+    </div>
+
+    <!-- Right form panel -->
+    <div class="contact-right">
+      <form id="enquiryForm" class="reveal">
+
+        <div class="form-section-label">About You</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Sophie" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Williams">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="hello@youremail.com" required>
+          </div>
+          <div class="form-group">
+            <label>Phone (optional)</label>
+            <input type="tel" placeholder="+44 ...">
+          </div>
+        </div>
+
+        <div class="form-section-label">Your Event</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Event Type</label>
+            <select>
+              <option value="" disabled selected>Select...</option>
+              <option>Wedding</option>
+              <option>Corporate Gala</option>
+              <option>Private Event</option>
+              <option>Concert</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Event Date</label>
+            <input type="date">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Location / Venue</label>
+          <input type="text" placeholder="City, Country or Venue name">
+        </div>
+
+        <div class="form-section-label">Tell Me More</div>
+        <div class="form-group">
+          <label>Your Message</label>
+          <textarea rows="4" placeholder="Any details about the occasion, preferred music style, guest numbers, or questions you have..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Enquiry</button>
+        <p class="form-note">I'll be in touch within 24 hours.</p>
+
+      </form>
+      <div class="success-msg" id="successMsg">
+        <span class="icon">✦</span>
+        <h3>Thank you for reaching out</h3>
+        <p>Your message has been received. I'll be in touch within 24 hours.</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<script src="shared.js"></script>
+<script>
+  document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  });
+</script>
+</body>
+</html>
