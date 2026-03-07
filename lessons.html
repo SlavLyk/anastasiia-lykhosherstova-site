@@ -6,7 +6,16 @@
   <title>Violin Lessons — Anastasiia Lykhosherstova</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ── LESSONS INTRO ── */
+    /* ── LESSONS STATEMENT (full width) ── */
+    .lessons-statement {
+      padding: 80px 72px;
+      border-bottom: 1px solid rgba(201,165,90,0.12);
+    }
+    .lessons-statement-inner {
+      max-width: 760px;
+    }
+
+    /* ── LESSONS INTRO (two columns) ── */
     .lessons-intro {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -14,14 +23,11 @@
       border-bottom: 1px solid rgba(201,165,90,0.12);
     }
     .lessons-intro-left {
-      padding: 80px 72px;
+      padding: 64px 72px;
       border-right: 1px solid rgba(201,165,90,0.12);
     }
     .lessons-intro-right {
-      padding: 80px 72px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 64px 72px;
     }
     .lessons-lead {
       font-family: 'Cormorant Garamond', serif;
@@ -41,9 +47,7 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
-      margin-top: 48px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(201,165,90,0.12);
+      margin-top: 28px;
     }
     .credential-item {
       display: flex;
@@ -302,6 +306,7 @@
       .curriculum-pillars { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 860px) {
+      .lessons-statement { padding: 52px 28px; }
       .lessons-intro { grid-template-columns: 1fr; }
       .lessons-intro-left { padding: 48px 28px; border-right: none; border-bottom: 1px solid rgba(201,165,90,0.12); }
       .lessons-intro-right { padding: 48px 28px; }
@@ -329,122 +334,74 @@
     <h1 class="reveal">Violin <em>Lessons</em></h1>
   </div>
 
-  <!-- Intro + Credentials -->
+  <!-- Full-width statement -->
+  <div class="lessons-statement">
+    <div class="lessons-statement-inner">
+      <p class="lessons-lead reveal">Learn from a <em>concert-level</em> musician with over 10 years of teaching experience and a Master's Degree in Music.</p>
+      <p class="lessons-body reveal">Each session is shaped around your goals — in person in Calgary, for children, teens, and adults at all levels.</p>
+    </div>
+  </div>
+
+  <!-- Two-column: Learning | Teaching -->
   <div class="lessons-intro">
     <div class="lessons-intro-left">
-      <p class="lessons-lead reveal">Learn from a <em>concert-level</em> musician with over 10 years of teaching experience and a Master's Degree in Music.</p>
-      <p class="lessons-body reveal">Anastasiia brings the rigour of a conservatoire education and the warmth of a working performer to every lesson. Whether you are picking up the violin for the first time or preparing for a conservatoire audition, each session is shaped around your goals.</p>
-      <p class="lessons-body reveal">Lessons are offered in person in Calgary, Alberta — for children, teens, and adults at all levels.</p>
-
       <div class="credential-row">
+        <div class="section-label reveal">My Learning Experience</div>
         <div class="credential-item reveal">
           <div class="credential-mark"></div>
           <div class="credential-text">
-            <strong>Master's Degree in Music</strong>
-            <span>Kharkiv National University of Arts — under Honored Artists of Ukraine</span>
+            <strong>Kharkiv National University of Arts</strong>
+            <span>Master's Degree in Music, under Honored Artists of Ukraine</span>
           </div>
         </div>
         <div class="credential-item reveal reveal-delay-1">
           <div class="credential-mark"></div>
           <div class="credential-text">
-            <strong>Concertmaster — Calgary Civic Symphony</strong>
-            <span>Current principal chair, Sep 2025 – Ongoing</span>
+            <strong>Primary Teacher</strong>
+            <span>to be added</span>
           </div>
         </div>
         <div class="credential-item reveal reveal-delay-2">
           <div class="credential-mark"></div>
           <div class="credential-text">
-            <strong>International 1st Prize Laureate × 2</strong>
-            <span>VII Musical Universe & VI Music Modern competitions, 2021</span>
+            <strong>Masterclass</strong>
+            <span>to be added</span>
+          </div>
+        </div>
+        <div class="credential-item reveal reveal-delay-3">
+          <div class="credential-mark"></div>
+          <div class="credential-text">
+            <strong>Masterclass</strong>
+            <span>to be added</span>
           </div>
         </div>
       </div>
     </div>
 
     <div class="lessons-intro-right">
-      <div class="section-label reveal">Why Study With Anastasiia</div>
-      <div style="margin-top: 12px;">
-        <div class="training-item reveal" style="display:flex;gap:28px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(247,243,236,0.06);">
-          <div style="font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold);min-width:28px;padding-top:3px;">01</div>
-          <div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ivory);margin-bottom:6px;">Conservatoire Foundations</div>
-            <div style="font-size:13px;color:rgba(247,243,236,0.44);line-height:1.75;">Solid technique built on the Eastern European classical tradition — precise bowing, intonation, and posture from day one.</div>
+      <div class="section-label reveal">My Teaching Experience</div>
+      <div class="credential-row">
+        <div class="credential-item reveal">
+          <div class="credential-mark"></div>
+          <div class="credential-text">
+            <strong>Mountain View Festival</strong>
+            <span>Violin instructor, 2024 & 2025</span>
           </div>
         </div>
-        <div class="training-item reveal reveal-delay-1" style="display:flex;gap:28px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(247,243,236,0.06);">
-          <div style="font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold);min-width:28px;padding-top:3px;">02</div>
-          <div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ivory);margin-bottom:6px;">Tailored to Every Student</div>
-            <div style="font-size:13px;color:rgba(247,243,236,0.44);line-height:1.75;">Repertoire and pacing chosen for your age, experience, and musical interests — no one-size-fits-all syllabus.</div>
+        <div class="credential-item reveal reveal-delay-1">
+          <div class="credential-mark"></div>
+          <div class="credential-text">
+            <strong>University of Calgary</strong>
+            <span>Violin instruction, Calgary, Alberta, 2024</span>
           </div>
         </div>
-        <div class="training-item reveal reveal-delay-2" style="display:flex;gap:28px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(247,243,236,0.06);">
-          <div style="font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold);min-width:28px;padding-top:3px;">03</div>
-          <div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ivory);margin-bottom:6px;">Active Performing Musician</div>
-            <div style="font-size:13px;color:rgba(247,243,236,0.44);line-height:1.75;">Learning from someone still on stage brings real-world insight into performance, nerves, and musical expression.</div>
+        <div class="credential-item reveal reveal-delay-2">
+          <div class="credential-mark"></div>
+          <div class="credential-text">
+            <strong>Private Studio</strong>
+            <span>10+ years teaching children, teens & adults, Ukraine & Canada</span>
           </div>
         </div>
-        <div class="training-item reveal reveal-delay-3" style="display:flex;gap:28px;align-items:flex-start;padding:20px 0;">
-          <div style="font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold);min-width:28px;padding-top:3px;">04</div>
-          <div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ivory);margin-bottom:6px;">Exam & Audition Preparation</div>
-            <div style="font-size:13px;color:rgba(247,243,236,0.44);line-height:1.75;">Structured preparation for RCM exams, school auditions, youth orchestra trials, and festival competitions.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Levels -->
-  <div class="levels-section">
-    <div class="levels-header">
-      <div>
-        <div class="section-label reveal">Levels Taught</div>
-        <h2 class="reveal">Who I<br><em>Teach</em></h2>
-      </div>
-      <p class="levels-sub reveal">From a child's very first bow hold to advanced repertoire and competition preparation — all ages and levels are welcome. Every student begins with a complimentary assessment lesson.</p>
-    </div>
-
-    <div class="levels-grid">
-      <div class="level-card reveal">
-        <div class="level-number">01</div>
-        <div class="level-title">Beginner</div>
-        <div class="level-subtitle">Ages 5+ · Adults Welcome</div>
-        <p class="level-desc">No experience necessary. We start with posture, bow hold, open strings, and simple melodies — building confidence and a lifelong love of music.</p>
-        <ul class="level-list">
-          <li>Instrument sizing & setup guidance</li>
-          <li>Proper posture & bow technique</li>
-          <li>Note reading & basic music theory</li>
-          <li>First repertoire pieces</li>
-          <li>Relaxed, encouraging pace</li>
-        </ul>
-      </div>
-      <div class="level-card reveal reveal-delay-1">
-        <div class="level-number">02</div>
-        <div class="level-title">Intermediate</div>
-        <div class="level-subtitle">Grades 3–7 · RCM Aligned</div>
-        <p class="level-desc">Building on existing skills with a focus on tone production, shifting, vibrato, and expanding repertoire into classical and contemporary works.</p>
-        <ul class="level-list">
-          <li>Vibrato development & shifting</li>
-          <li>Scales, arpeggios & études</li>
-          <li>Classical & modern repertoire</li>
-          <li>RCM examination preparation</li>
-          <li>Chamber & ensemble skills</li>
-        </ul>
-      </div>
-      <div class="level-card reveal reveal-delay-2">
-        <div class="level-number">03</div>
-        <div class="level-title">Advanced</div>
-        <div class="level-subtitle">Grades 8+ · Pre-Conservatoire</div>
-        <p class="level-desc">Serious students preparing for conservatoire auditions, youth orchestra trials, or competitions. Demanding repertoire with concert-level attention to detail.</p>
-        <ul class="level-list">
-          <li>Concerto & sonata repertoire</li>
-          <li>Advanced bowing techniques</li>
-          <li>Performance psychology & stage craft</li>
-          <li>Audition & competition coaching</li>
-          <li>Music theory at post-secondary level</li>
-        </ul>
       </div>
     </div>
   </div>

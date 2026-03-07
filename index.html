@@ -18,9 +18,27 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background:
-        linear-gradient(110deg, rgba(17,16,16,0.97) 38%, transparent 100%),
-        url('https://images.unsplash.com/photo-1594980596870-8aa52a78d8cd?w=1800&q=80') center/cover no-repeat;
+      background: var(--dark);
+    }
+    .hero-photo {
+      position: absolute;
+      top: 0; right: 0;
+      width: 52%;
+      height: 100%;
+      z-index: 1;
+    }
+    .hero-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: grayscale(15%) contrast(1.03);
+    }
+    .hero-photo::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, var(--dark) 0%, transparent 40%),
+                  linear-gradient(to top, var(--dark) 0%, transparent 30%);
     }
     .hero-content {
       position: relative; z-index: 2;
@@ -124,6 +142,22 @@
       }
       .nav-cards { display: none; }
       .scroll-hint { display: none; }
+      .hero-photo {
+        position: relative;
+        width: 100%;
+        height: 70vw;
+        max-height: 420px;
+        top: auto; right: auto;
+        order: -1;
+        opacity: 1;
+      }
+      .hero-photo img {
+        object-position: center 15%;
+      }
+      .hero-photo::after { display: none; }
+      .hero-content {
+        padding: 36px 28px 52px;
+      }
     }
   </style>
 </head>
@@ -132,6 +166,9 @@
 <div class="page">
   <div class="hero">
     <div class="hero-bg"></div>
+    <div class="hero-photo">
+      <img src="yycmusicians_1706049899_3286907249862928144_1573784905.jpg" alt="Anastasiia Lykhosherstova">
+    </div>
 
     <div class="hero-content">
       <div class="hero-eyebrow">Professional Violinist</div>
