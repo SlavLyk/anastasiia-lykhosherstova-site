@@ -10,6 +10,17 @@
     .lessons-statement {
       padding: 80px 72px;
       border-bottom: 1px solid rgba(201,165,90,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    .lessons-statement::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=1400&q=80') center/cover no-repeat;
+      transform: scaleX(-1);
+      opacity: 0.06;
+      pointer-events: none;
     }
     .lessons-statement-inner {
       max-width: 760px;
@@ -287,7 +298,9 @@
     /* ── CTA ── */
     .lessons-cta {
       padding: 100px 72px;
-      background: var(--charcoal);
+      background:
+        linear-gradient(rgba(17,16,16,0.92), rgba(17,16,16,0.92)),
+        url('https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=1400&q=80') center/cover no-repeat;
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 60px;
