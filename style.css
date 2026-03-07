@@ -397,6 +397,9 @@ footer {
 @media (max-width: 860px) {
   nav { padding: 18px 28px; }
 
+  /* Pin toggle to the right in both open and closed states */
+  .theme-toggle { margin-left: auto; margin-right: 10px; }
+
   /* Hamburger icon */
   .nav-hamburger {
     display: flex; flex-direction: column; gap: 5px;
@@ -424,7 +427,7 @@ footer {
     border-bottom: none;
     overflow: hidden;
   }
-  nav.nav-open .nav-logo    { order: 1; flex: 1; }
+  nav.nav-open .nav-logo    { order: 1; }
   nav.nav-open .theme-toggle { order: 2; }
   nav.nav-open .nav-hamburger { order: 3; }
 
