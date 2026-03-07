@@ -215,7 +215,7 @@
 
     } catch (err) {
       // Fallback: show placeholder message
-      list.innerHTML = '<p style="padding:40px 0;color:rgba(247,243,236,0.35);font-family:\'Jost\',sans-serif;font-size:13px;">Events loading — please check back soon.</p>';
+      list.innerHTML = '<p style="padding:40px 0;color:rgba(247,243,236,0.35);font-family:\'Jost\',sans-serif;font-size:13px;">Events loading, please check back soon.</p>';
       console.warn('Notion fetch failed. Have you set NOTION_TOKEN and set up a proxy?', err);
     }
   }
