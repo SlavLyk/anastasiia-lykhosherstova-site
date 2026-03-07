@@ -10,7 +10,106 @@
   --mid: #2e2c2a;
   --ivory: #f7f3ec;
   --cream: #ede8de;
-  --text-muted: rgba(247,243,236,0.5);
+
+  /* Text/ivory opacity variants (base: 247,243,236) */
+  --tx-88: rgba(247,243,236,0.88);
+  --tx-85: rgba(247,243,236,0.85);
+  --tx-80: rgba(247,243,236,0.80);
+  --tx-60: rgba(247,243,236,0.60);
+  --tx-58: rgba(247,243,236,0.58);
+  --tx-55: rgba(247,243,236,0.55);
+  --tx-52: rgba(247,243,236,0.52);
+  --tx-50: rgba(247,243,236,0.50);
+  --tx-48: rgba(247,243,236,0.48);
+  --tx-45: rgba(247,243,236,0.45);
+  --tx-44: rgba(247,243,236,0.44);
+  --tx-40: rgba(247,243,236,0.40);
+  --tx-38: rgba(247,243,236,0.38);
+  --tx-35: rgba(247,243,236,0.35);
+  --tx-30: rgba(247,243,236,0.30);
+  --tx-28: rgba(247,243,236,0.28);
+  --tx-25: rgba(247,243,236,0.25);
+  --tx-22: rgba(247,243,236,0.22);
+  --tx-20: rgba(247,243,236,0.20);
+  --tx-18: rgba(247,243,236,0.18);
+  --tx-12: rgba(247,243,236,0.12);
+  --tx-10: rgba(247,243,236,0.10);
+  --tx-08: rgba(247,243,236,0.08);
+  --tx-07: rgba(247,243,236,0.07);
+  --tx-06: rgba(247,243,236,0.06);
+  --tx-05: rgba(247,243,236,0.05);
+
+  /* Gold opacity variants (base: 201,165,90) */
+  --gd-70: rgba(201,165,90,0.70);
+  --gd-40: rgba(201,165,90,0.40);
+  --gd-30: rgba(201,165,90,0.30);
+  --gd-20: rgba(201,165,90,0.20);
+  --gd-18: rgba(201,165,90,0.18);
+  --gd-15: rgba(201,165,90,0.15);
+  --gd-12: rgba(201,165,90,0.12);
+  --gd-10: rgba(201,165,90,0.10);
+  --gd-08: rgba(201,165,90,0.08);
+  --gd-04: rgba(201,165,90,0.04);
+
+  /* Overlay / background variants */
+  --ov-nav: rgba(17,16,16,0.92);
+  --ov-97: rgba(17,16,16,0.97);
+  --ov-card: rgba(28,27,26,0.88);
+  --ov-card-hover: rgba(46,44,42,0.95);
+  --ov-cta: rgba(17,16,16,0.92);
+  --bg-input: rgba(255,255,255,0.04);
+
+  /* Backward compat */
+  --text-muted: var(--tx-50);
+}
+
+/* ── LIGHT THEME ── */
+/*
+  Palette: cool-neutral stone white
+  Gold (#C9A55A) pops against these because of hue contrast —
+  warm gold vs. neutral-cool surface — not just lightness contrast.
+  Think luxury gallery walls, fine art print paper, high-fashion editorial.
+*/
+[data-theme="light"] {
+  --dark: #fffff5;       /* near-pure white, faint warmth — main page bg */
+  --charcoal: #f8f3e3;   /* warm secondary surfaces                       */
+  --mid: #f0ead8;        /* cards, elevated surfaces                      */
+  --ivory: #1c1b1a;      /* dark charcoal — primary text                  */
+  --cream: #e4ddc8;      /* dividers, deeper accents                      */
+
+  --tx-88: rgba(28,27,26,0.88);
+  --tx-85: rgba(28,27,26,0.85);
+  --tx-80: rgba(28,27,26,0.80);
+  --tx-60: rgba(28,27,26,0.70);
+  --tx-58: rgba(28,27,26,0.68);
+  --tx-55: rgba(28,27,26,0.65);
+  --tx-52: rgba(28,27,26,0.62);
+  --tx-50: rgba(28,27,26,0.60);
+  --tx-48: rgba(28,27,26,0.58);
+  --tx-45: rgba(28,27,26,0.55);
+  --tx-44: rgba(28,27,26,0.54);
+  --tx-40: rgba(28,27,26,0.50);
+  --tx-38: rgba(28,27,26,0.48);
+  --tx-35: rgba(28,27,26,0.44);
+  --tx-30: rgba(28,27,26,0.40);
+  --tx-28: rgba(28,27,26,0.38);
+  --tx-25: rgba(28,27,26,0.35);
+  --tx-22: rgba(28,27,26,0.32);
+  --tx-20: rgba(28,27,26,0.30);
+  --tx-18: rgba(28,27,26,0.28);
+  --tx-12: rgba(28,27,26,0.20);
+  --tx-10: rgba(28,27,26,0.16);
+  --tx-08: rgba(28,27,26,0.14);
+  --tx-07: rgba(28,27,26,0.12);
+  --tx-06: rgba(28,27,26,0.10);
+  --tx-05: rgba(28,27,26,0.08);
+
+  --ov-nav: rgba(255,255,245,0.96);
+  --ov-97: rgba(255,255,245,0.97);
+  --ov-card: rgba(248,243,227,0.90);
+  --ov-card-hover: rgba(240,234,216,0.96);
+  --ov-cta: rgba(255,255,245,0.93);
+  --bg-input: rgba(0,0,0,0.04);
 }
 
 html { scroll-behavior: smooth; }
@@ -33,10 +132,10 @@ nav {
   padding: 28px 72px;
   display: flex; align-items: center; justify-content: space-between;
   transition: background 0.4s, padding 0.4s;
-  background: rgba(17,16,16,0.92);
+  background: var(--ov-nav);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(201,165,90,0.12);
+  border-bottom: 1px solid var(--gd-12);
 }
 .nav-logo {
   font-family: 'Cormorant Garamond', serif;
@@ -53,12 +152,11 @@ nav {
   list-style: none;
 }
 .nav-links a {
-  color: rgba(247,243,236,0.55);
+  color: var(--tx-55);
   text-decoration: none;
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  transition: color 0.25s;
   padding-bottom: 2px;
   border-bottom: 1px solid transparent;
   transition: color 0.25s, border-color 0.25s;
@@ -69,6 +167,34 @@ nav {
   border-bottom-color: var(--gold);
 }
 
+/* ── THEME TOGGLE ── */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--gd-30);
+  color: var(--gold);
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.25s, background 0.25s;
+}
+.theme-toggle:hover {
+  background: var(--gd-08);
+  border-color: var(--gold);
+}
+.theme-toggle svg {
+  width: 14px; height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+.icon-sun { display: block; }
+.icon-moon { display: none; }
+[data-theme="light"] .icon-sun { display: none; }
+[data-theme="light"] .icon-moon { display: block; }
+
 /* ── PAGE WRAPPER ── */
 .page {
   flex: 1;
@@ -78,7 +204,7 @@ nav {
 /* ── PAGE HERO (for inner pages) ── */
 .page-hero {
   padding: 80px 72px 64px;
-  border-bottom: 1px solid rgba(201,165,90,0.12);
+  border-bottom: 1px solid var(--gd-12);
 }
 .page-eyebrow {
   font-size: 10px;
@@ -152,14 +278,14 @@ h3 {
 .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
 
 .btn-ghost {
-  color: rgba(247,243,236,0.6);
+  color: var(--tx-60);
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   text-decoration: none;
   display: inline-flex; align-items: center; gap: 10px;
   transition: color 0.25s;
-  border: 1px solid rgba(201,165,90,0.3);
+  border: 1px solid var(--gd-30);
   padding: 14px 36px;
 }
 .btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
@@ -167,7 +293,7 @@ h3 {
 /* ── FOOTER ── */
 footer {
   background: var(--charcoal);
-  border-top: 1px solid rgba(201,165,90,0.12);
+  border-top: 1px solid var(--gd-12);
   padding: 44px 72px;
   display: flex;
   align-items: center;
@@ -187,7 +313,7 @@ footer {
 .footer-links a {
   font-size: 10px; letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(247,243,236,0.3);
+  color: var(--tx-30);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -204,7 +330,7 @@ footer {
   align-items: center;
 }
 .footer-social-icon {
-  color: rgba(247,243,236,0.3);
+  color: var(--tx-30);
   text-decoration: none;
   transition: color 0.2s;
   display: flex;
@@ -217,7 +343,7 @@ footer {
 }
 .footer-copy {
   font-size: 11px;
-  color: rgba(247,243,236,0.2);
+  color: var(--tx-20);
 }
 
 /* ── REVEAL ── */
@@ -238,15 +364,15 @@ footer {
   display: block;
   font-size: 10px; letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(247,243,236,0.45);
+  color: var(--tx-45);
   margin-bottom: 10px;
 }
 .form-group input,
 .form-group textarea,
 .form-group select {
   width: 100%;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(201,165,90,0.18);
+  background: var(--bg-input);
+  border: 1px solid var(--gd-18);
   color: var(--ivory);
   padding: 14px 18px;
   font-family: 'Jost', sans-serif;
@@ -261,7 +387,7 @@ footer {
 .form-group textarea:focus,
 .form-group select:focus { border-color: var(--gold); }
 .form-group input::placeholder,
-.form-group textarea::placeholder { color: rgba(247,243,236,0.18); }
+.form-group textarea::placeholder { color: var(--tx-18); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 
 /* ── HAMBURGER (hidden on desktop) ── */
@@ -298,8 +424,9 @@ footer {
     border-bottom: none;
     overflow: hidden;
   }
-  nav.nav-open .nav-logo   { order: 1; flex: 1; }
-  nav.nav-open .nav-hamburger { order: 2; }
+  nav.nav-open .nav-logo    { order: 1; flex: 1; }
+  nav.nav-open .theme-toggle { order: 2; }
+  nav.nav-open .nav-hamburger { order: 3; }
 
   /* Nav links — hidden by default on mobile */
   .nav-links { display: none; }
@@ -307,7 +434,7 @@ footer {
   /* Nav links — fullscreen centered menu when open */
   nav.nav-open .nav-links {
     display: flex !important;
-    order: 3;
+    order: 4;
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -331,7 +458,7 @@ footer {
     font-weight: 300;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(247,243,236,0.55);
+    color: var(--tx-55);
     display: block;
     padding: 11px 0;
     border: none;

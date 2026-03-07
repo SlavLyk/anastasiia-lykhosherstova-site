@@ -35,23 +35,23 @@
 
     .about-text {
       font-size: 15px; line-height: 1.95;
-      color: rgba(247,243,236,0.58);
+      color: var(--tx-58);
       margin-bottom: 28px;
     }
     .about-text strong {
-      color: rgba(247,243,236,0.85);
+      color: var(--tx-85);
       font-weight: 400;
     }
 
     .stats-row {
       display: grid; grid-template-columns: repeat(3,1fr);
       gap: 0;
-      border: 1px solid rgba(201,165,90,0.15);
+      border: 1px solid var(--gd-15);
       margin: 52px 0;
     }
     .stat-box {
       padding: 36px 28px;
-      border-right: 1px solid rgba(201,165,90,0.15);
+      border-right: 1px solid var(--gd-15);
       text-align: center;
     }
     .stat-box:last-child { border-right: none; }
@@ -64,7 +64,7 @@
     .stat-label {
       font-size: 10px; letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: rgba(247,243,236,0.38);
+      color: var(--tx-38);
     }
 
     .training-section { margin-top: 56px; }
@@ -73,12 +73,12 @@
       text-transform: uppercase; color: var(--gold);
       margin-bottom: 24px;
       padding-bottom: 14px;
-      border-bottom: 1px solid rgba(201,165,90,0.15);
+      border-bottom: 1px solid var(--gd-15);
     }
     .training-item {
       display: flex; gap: 28px; align-items: flex-start;
       padding: 18px 0;
-      border-bottom: 1px solid rgba(247,243,236,0.06);
+      border-bottom: 1px solid var(--tx-06);
     }
     .training-year {
       font-family: 'Cormorant Garamond', serif;
@@ -92,7 +92,7 @@
       margin-bottom: 4px;
     }
     .training-detail span {
-      font-size: 12px; color: rgba(247,243,236,0.4);
+      font-size: 12px; color: var(--tx-40);
       letter-spacing: 0.05em;
     }
 
@@ -106,7 +106,7 @@
     /* ── SOCIAL STRIP ── */
     .social-strip {
       background: var(--charcoal);
-      border-top: 1px solid rgba(201,165,90,0.12);
+      border-top: 1px solid var(--gd-12);
       padding: 48px 72px;
       display: flex;
       flex-direction: column;
@@ -117,7 +117,7 @@
       font-size: 9px;
       letter-spacing: 0.32em;
       text-transform: uppercase;
-      color: rgba(247,243,236,0.3);
+      color: var(--tx-30);
     }
     .social-icons {
       display: flex;
@@ -127,17 +127,17 @@
     .social-icon {
       width: 44px; height: 44px;
       border-radius: 50%;
-      background: rgba(247,243,236,0.06);
-      border: 1px solid rgba(247,243,236,0.1);
+      background: var(--tx-06);
+      border: 1px solid var(--tx-10);
       display: flex; align-items: center; justify-content: center;
-      color: rgba(247,243,236,0.5);
+      color: var(--tx-50);
       text-decoration: none;
       transition: background 0.25s, color 0.25s, border-color 0.25s;
     }
     .social-icon:hover {
-      background: rgba(201,165,90,0.12);
+      background: var(--gd-12);
       color: var(--gold);
-      border-color: rgba(201,165,90,0.4);
+      border-color: var(--gd-40);
     }
     .social-icon svg {
       width: 17px; height: 17px;

@@ -1,5 +1,11 @@
 // shared.js — inject nav and footer into every page
 (function() {
+  // Initialize theme immediately to prevent flash of unstyled content
+  const _savedTheme = localStorage.getItem('theme');
+  if (_savedTheme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
   const navLinks = [
@@ -20,11 +26,40 @@
         <li><a href="${l.href}" class="${currentPage === l.href ? 'active' : ''}">${l.label}</a></li>
       `).join('')}
     </ul>
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4"/>
+        <line x1="12" y1="2" x2="12" y2="5"/>
+        <line x1="12" y1="19" x2="12" y2="22"/>
+        <line x1="2" y1="12" x2="5" y2="12"/>
+        <line x1="19" y1="12" x2="22" y2="12"/>
+        <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/>
+        <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
+        <line x1="19.78" y1="4.22" x2="17.66" y2="6.34"/>
+        <line x1="6.34" y1="17.66" x2="4.22" y2="19.78"/>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
     <button class="nav-hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   `;
   document.body.prepend(nav);
+
+  // Theme toggle
+  const themeToggle = nav.querySelector('.theme-toggle');
+  themeToggle.addEventListener('click', () => {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const newTheme = isLight ? 'dark' : 'light';
+    if (newTheme === 'dark') {
+      document.documentElement.removeAttribute('data-theme');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+    localStorage.setItem('theme', newTheme);
+  });
 
   // Hamburger toggle
   const hamburger = nav.querySelector('.nav-hamburger');

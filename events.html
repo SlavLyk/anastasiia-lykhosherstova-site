@@ -12,11 +12,11 @@
       display: flex; align-items: end; justify-content: space-between;
       padding: 72px 0 60px;
       gap: 40px;
-      border-bottom: 1px solid rgba(201,165,90,0.12);
+      border-bottom: 1px solid var(--gd-12);
     }
     .events-sub {
       font-size: 14px; line-height: 1.85;
-      color: rgba(247,243,236,0.5);
+      color: var(--tx-50);
       max-width: 380px;
     }
 
@@ -28,7 +28,7 @@
     .filter-tab {
       padding: 10px 24px;
       font-size: 10px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: rgba(247,243,236,0.4);
+      text-transform: uppercase; color: var(--tx-40);
       background: var(--charcoal);
       border: none; cursor: pointer;
       transition: background 0.2s, color 0.2s;
@@ -63,7 +63,7 @@
     .event-date-box {
       text-align: center;
       padding: 12px;
-      border: 1px solid rgba(201,165,90,0.15);
+      border: 1px solid var(--gd-15);
     }
     .event-date-day {
       font-family: 'Cormorant Garamond', serif;
@@ -73,7 +73,7 @@
     .event-date-month {
       font-size: 9px; letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: rgba(247,243,236,0.4);
+      color: var(--tx-40);
       margin-top: 4px;
     }
     .event-name {
@@ -82,15 +82,15 @@
       color: var(--ivory); margin-bottom: 6px;
     }
     .event-location {
-      font-size: 12px; color: rgba(247,243,236,0.38);
+      font-size: 12px; color: var(--tx-38);
       letter-spacing: 0.06em;
     }
     .event-badge {
       font-size: 9px; letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(201,165,90,0.7);
-      background: rgba(201,165,90,0.08);
-      border: 1px solid rgba(201,165,90,0.18);
+      color: var(--gd-70);
+      background: var(--gd-08);
+      border: 1px solid var(--gd-18);
       padding: 7px 14px;
       text-align: center;
       white-space: nowrap;
@@ -98,7 +98,7 @@
     .event-link {
       font-size: 10px; letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(247,243,236,0.38);
+      color: var(--tx-38);
       text-decoration: none;
       transition: color 0.2s;
       text-align: right;
@@ -109,9 +109,9 @@
     .past-section { margin-top: 72px; }
     .past-title {
       font-size: 10px; letter-spacing: 0.26em;
-      text-transform: uppercase; color: rgba(247,243,236,0.3);
+      text-transform: uppercase; color: var(--tx-30);
       padding-bottom: 16px;
-      border-bottom: 1px solid rgba(247,243,236,0.07);
+      border-bottom: 1px solid var(--tx-07);
       margin-bottom: 0;
     }
     .past-row {
@@ -119,11 +119,11 @@
       grid-template-columns: 110px 1fr 140px;
       gap: 32px; align-items: center;
       padding: 22px 32px;
-      border-bottom: 1px solid rgba(247,243,236,0.05);
+      border-bottom: 1px solid var(--tx-05);
       opacity: 0.45;
     }
     .past-date {
-      font-size: 12px; color: rgba(247,243,236,0.5);
+      font-size: 12px; color: var(--tx-50);
       letter-spacing: 0.06em;
     }
     .past-name {
@@ -131,14 +131,20 @@
       font-size: 20px; font-weight: 400; color: var(--ivory);
     }
     .past-loc {
-      font-size: 11px; color: rgba(247,243,236,0.3); letter-spacing: 0.05em;
+      font-size: 11px; color: var(--tx-30); letter-spacing: 0.05em;
     }
 
     .events-loading {
       padding: 48px 0;
       font-size: 13px; letter-spacing: 0.08em;
-      color: rgba(247,243,236,0.3);
+      color: var(--tx-30);
       font-family: 'Jost', sans-serif;
+    }
+    .events-msg {
+      padding: 40px 0;
+      color: var(--tx-35);
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
     }
     @media (max-width: 860px) {
       .events-page { padding: 0 28px 72px; }
@@ -207,7 +213,7 @@
       const past_ev  = events.filter(e => e.date <  today).reverse();
 
       // Render upcoming
-      list.innerHTML = upcoming.length ? upcoming.map(renderEventRow).join('') : '<p style="padding:40px 0;color:rgba(247,243,236,0.35);font-family:\'Jost\',sans-serif;font-size:13px;">No upcoming events scheduled at this time.</p>';
+      list.innerHTML = upcoming.length ? upcoming.map(renderEventRow).join('') : '<p class="events-msg">No upcoming events scheduled at this time.</p>';
 
       // Render past
       past.innerHTML = past_ev.length ? past_ev.map(renderPastRow).join('') : '';
@@ -215,7 +221,7 @@
 
     } catch (err) {
       // Fallback: show placeholder message
-      list.innerHTML = '<p style="padding:40px 0;color:rgba(247,243,236,0.35);font-family:\'Jost\',sans-serif;font-size:13px;">Events loading, please check back soon.</p>';
+      list.innerHTML = '<p class="events-msg">Events loading, please check back soon.</p>';
       console.warn('Notion fetch failed. Have you set NOTION_TOKEN and set up a proxy?', err);
     }
   }

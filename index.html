@@ -67,7 +67,7 @@
     }
     .hero-sub {
       font-size: 14px; line-height: 1.85;
-      color: rgba(247,243,236,0.5);
+      color: var(--tx-50);
       max-width: 400px;
       margin-bottom: 52px;
       letter-spacing: 0.02em;
@@ -89,17 +89,17 @@
     .nav-card {
       display: flex; align-items: center; justify-content: space-between;
       padding: 22px 32px;
-      background: rgba(28,27,26,0.88);
+      background: var(--ov-card);
       backdrop-filter: blur(10px);
-      border-top: 1px solid rgba(201,165,90,0.1);
+      border-top: 1px solid var(--gd-10);
       text-decoration: none;
       transition: background 0.25s, padding-left 0.25s;
     }
-    .nav-card:first-child { border-top: 1px solid rgba(201,165,90,0.2); }
-    .nav-card:hover { background: rgba(46,44,42,0.95); padding-left: 40px; }
+    .nav-card:first-child { border-top: 1px solid var(--gd-20); }
+    .nav-card:hover { background: var(--ov-card-hover); padding-left: 40px; }
     .nav-card-label {
       font-size: 11px; letter-spacing: 0.2em;
-      text-transform: uppercase; color: rgba(247,243,236,0.6);
+      text-transform: uppercase; color: var(--tx-60);
       transition: color 0.25s;
     }
     .nav-card:hover .nav-card-label { color: var(--gold); }
@@ -117,11 +117,11 @@
     }
     .scroll-hint span {
       font-size: 9px; letter-spacing: 0.26em;
-      text-transform: uppercase; color: rgba(247,243,236,0.28);
+      text-transform: uppercase; color: var(--tx-28);
     }
     .scroll-line {
       width: 48px; height: 1px;
-      background: linear-gradient(to right, rgba(201,165,90,0.6), transparent);
+      background: linear-gradient(to right, var(--gd-40), transparent);
     }
 
     .nav-cards { display: none; }
