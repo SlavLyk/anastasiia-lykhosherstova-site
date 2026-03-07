@@ -393,8 +393,8 @@ footer {
 /* ── HAMBURGER (hidden on desktop) ── */
 .nav-hamburger { display: none; }
 
-/* ── MOBILE ── */
-@media (max-width: 860px) {
+/* ── NAV RESPONSIVE — hamburger kicks in at 1024px ── */
+@media (max-width: 1024px) {
   nav { padding: 18px 28px; }
 
   /* Pin toggle to the right in both open and closed states */
@@ -427,11 +427,11 @@ footer {
     border-bottom: none;
     overflow: hidden;
   }
-  nav.nav-open .nav-logo     { order: 1; align-self: center; }
-  nav.nav-open .theme-toggle { order: 2; align-self: center; }
+  nav.nav-open .nav-logo      { order: 1; align-self: center; }
+  nav.nav-open .theme-toggle  { order: 2; align-self: center; }
   nav.nav-open .nav-hamburger { order: 3; align-self: center; }
 
-  /* Nav links — hidden by default on mobile */
+  /* Nav links — hidden by default */
   .nav-links { display: none; }
 
   /* Nav links — fullscreen centered menu when open */
@@ -469,8 +469,14 @@ footer {
   }
   nav.nav-open .nav-links a:hover,
   nav.nav-open .nav-links a.active { color: var(--gold); }
+}
 
-  /* Other mobile fixes */
+/* ── OTHER MOBILE FIXES ── */
+@media (max-width: 1024px) {
+  .page { padding-top: 62px; }
+}
+
+@media (max-width: 860px) {
   .page-hero { padding: 44px 28px 36px; }
   footer { flex-direction: column; gap: 24px; text-align: center; padding: 36px 28px; }
   .footer-links { flex-wrap: wrap; justify-content: center; gap: 18px; }
