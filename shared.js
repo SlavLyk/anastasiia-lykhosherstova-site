@@ -65,7 +65,19 @@
   const hamburger = nav.querySelector('.nav-hamburger');
   hamburger.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('nav-open');
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    if (isOpen) {
+      // Compensate for scrollbar disappearing so fixed nav doesn't shift
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = 'hidden';
+      if (scrollbarWidth > 0) {
+        document.body.style.paddingRight = scrollbarWidth + 'px';
+        nav.style.paddingRight = (28 + scrollbarWidth) + 'px';
+      }
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+      nav.style.paddingRight = '';
+    }
   });
 
   // Close menu when a link is clicked

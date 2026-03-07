@@ -427,9 +427,9 @@ footer {
     border-bottom: none;
     overflow: hidden;
   }
-  nav.nav-open .nav-logo    { order: 1; }
-  nav.nav-open .theme-toggle { order: 2; }
-  nav.nav-open .nav-hamburger { order: 3; }
+  nav.nav-open .nav-logo     { order: 1; align-self: center; }
+  nav.nav-open .theme-toggle { order: 2; align-self: center; }
+  nav.nav-open .nav-hamburger { order: 3; align-self: center; }
 
   /* Nav links — hidden by default on mobile */
   .nav-links { display: none; }
