@@ -240,13 +240,87 @@ footer {
 .form-group textarea::placeholder { color: rgba(247,243,236,0.18); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 
+/* ── HAMBURGER (hidden on desktop) ── */
+.nav-hamburger { display: none; }
+
 /* ── MOBILE ── */
 @media (max-width: 860px) {
   nav { padding: 18px 28px; }
+
+  /* Hamburger icon */
+  .nav-hamburger {
+    display: flex; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px;
+    flex-shrink: 0; z-index: 1;
+  }
+  .nav-hamburger span {
+    width: 22px; height: 1px; background: var(--ivory);
+    display: block;
+    transition: transform 0.35s, opacity 0.35s;
+  }
+  nav.nav-open .nav-hamburger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  nav.nav-open .nav-hamburger span:nth-child(2) { opacity: 0; }
+  nav.nav-open .nav-hamburger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  /* Nav expands to fullscreen overlay when open */
+  nav.nav-open {
+    bottom: 0;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    background: var(--dark);
+    backdrop-filter: none;
+    border-bottom: none;
+    overflow: hidden;
+  }
+  nav.nav-open .nav-logo   { order: 1; flex: 1; }
+  nav.nav-open .nav-hamburger { order: 2; }
+
+  /* Nav links — hidden by default on mobile */
   .nav-links { display: none; }
-  .page-hero { padding: 60px 28px 44px; }
+
+  /* Nav links — fullscreen centered menu when open */
+  nav.nav-open .nav-links {
+    display: flex !important;
+    order: 3;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 60px);
+    list-style: none;
+    gap: 0;
+    padding: 0 0 48px;
+    animation: menuFadeIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes menuFadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  nav.nav-open .nav-links li { width: 100%; text-align: center; border: none; }
+
+  nav.nav-open .nav-links a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 10vw, 54px);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(247,243,236,0.55);
+    display: block;
+    padding: 11px 0;
+    border: none;
+    transition: color 0.2s;
+  }
+  nav.nav-open .nav-links a:hover,
+  nav.nav-open .nav-links a.active { color: var(--gold); }
+
+  /* Other mobile fixes */
+  .page-hero { padding: 44px 28px 36px; }
   footer { flex-direction: column; gap: 24px; text-align: center; padding: 36px 28px; }
   .footer-links { flex-wrap: wrap; justify-content: center; gap: 18px; }
+  .form-row { grid-template-columns: 1fr; }
+  .cta-band { gap: 24px; }
 }
 
 /* ── SHARED SCRIPT (inline in each file) ── */

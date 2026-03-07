@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Violin Lessons — Anastasiia Lykhosherstova</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── LESSONS INTRO ── */
+    .lessons-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-bottom: 1px solid rgba(201,165,90,0.12);
+    }
+    .lessons-intro-left {
+      padding: 80px 72px;
+      border-right: 1px solid rgba(201,165,90,0.12);
+    }
+    .lessons-intro-right {
+      padding: 80px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .lessons-lead {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 300;
+      line-height: 1.25;
+      color: var(--ivory);
+      margin-bottom: 32px;
+    }
+    .lessons-lead em { font-style: italic; color: var(--gold-light); }
+    .lessons-body {
+      font-size: 15px; line-height: 1.9;
+      color: rgba(247,243,236,0.52);
+      margin-bottom: 20px;
+    }
+    .credential-row {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(201,165,90,0.12);
+    }
+    .credential-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .credential-mark {
+      width: 1px;
+      height: 36px;
+      background: var(--gold);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .credential-text strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--ivory);
+      margin-bottom: 2px;
+    }
+    .credential-text span {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: rgba(247,243,236,0.38);
+    }
+
+    /* ── WHO IS IT FOR ── */
+    .levels-section {
+      padding: 96px 72px;
+      border-bottom: 1px solid rgba(201,165,90,0.12);
+    }
+    .levels-header {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+    .levels-sub {
+      font-size: 15px; line-height: 1.9;
+      color: rgba(247,243,236,0.5);
+    }
+    .levels-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(201,165,90,0.12);
+    }
+    .level-card {
+      background: var(--charcoal);
+      padding: 52px 44px;
+      transition: background 0.3s;
+    }
+    .level-card:hover { background: var(--mid); }
+    .level-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 72px;
+      font-weight: 300;
+      color: rgba(201,165,90,0.1);
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+    .level-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--ivory);
+      margin-bottom: 6px;
+    }
+    .level-subtitle {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .level-desc {
+      font-size: 13px;
+      line-height: 1.85;
+      color: rgba(247,243,236,0.48);
+      margin-bottom: 32px;
+    }
+    .level-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .level-list li {
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      color: rgba(247,243,236,0.45);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .level-list li::before {
+      content: '';
+      width: 16px; height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ── WHAT YOU LEARN ── */
+    .curriculum-section {
+      background: var(--dark);
+      border-bottom: 1px solid rgba(201,165,90,0.12);
+    }
+    .curriculum-header {
+      padding: 80px 72px 0;
+    }
+    .curriculum-pillars {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 64px;
+      border-top: 1px solid rgba(201,165,90,0.12);
+    }
+    .pillar {
+      padding: 52px 48px;
+      border-right: 1px solid rgba(201,165,90,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    .pillar:last-child { border-right: none; }
+    .pillar::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .pillar:hover::before { opacity: 1; }
+    .pillar-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 32px;
+    }
+    .pillar-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--ivory);
+      margin-bottom: 18px;
+      line-height: 1.15;
+    }
+    .pillar-desc {
+      font-size: 13px;
+      line-height: 1.85;
+      color: rgba(247,243,236,0.44);
+    }
+
+    /* ── FORMAT ── */
+    .format-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-bottom: 1px solid rgba(201,165,90,0.12);
+    }
+    .format-left {
+      padding: 80px 72px;
+      background: var(--charcoal);
+      border-right: 1px solid rgba(201,165,90,0.12);
+    }
+    .format-right {
+      padding: 80px 72px;
+      background: var(--dark);
+    }
+    .format-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 40px;
+      border: 1px solid rgba(201,165,90,0.15);
+    }
+    .format-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 32px;
+      border-bottom: 1px solid rgba(201,165,90,0.1);
+      transition: background 0.25s;
+    }
+    .format-option:last-child { border-bottom: none; }
+    .format-option:hover { background: rgba(201,165,90,0.04); }
+    .format-duration {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--ivory);
+    }
+    .format-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(247,243,236,0.38);
+    }
+    .format-badge {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(201,165,90,0.3);
+      padding: 5px 12px;
+    }
+    .format-details-list {
+      list-style: none;
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .format-details-list li {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .fd-label {
+      font-size: 9px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+      min-width: 80px;
+      padding-top: 3px;
+    }
+    .fd-value {
+      font-size: 14px;
+      color: rgba(247,243,236,0.6);
+      line-height: 1.6;
+    }
+
+    /* ── CTA ── */
+    .lessons-cta {
+      padding: 100px 72px;
+      background: var(--charcoal);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 60px;
+      align-items: center;
+    }
+    .lessons-cta-text {}
+    .lessons-cta h2 { margin-bottom: 16px; }
+    .lessons-cta p {
+      font-size: 15px;
+      color: rgba(247,243,236,0.45);
+      line-height: 1.8;
+      max-width: 480px;
+    }
+
+    @media (max-width: 1024px) {
+      .curriculum-pillars { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 860px) {
+      .lessons-intro { grid-template-columns: 1fr; }
+      .lessons-intro-left { padding: 48px 28px; border-right: none; border-bottom: 1px solid rgba(201,165,90,0.12); }
+      .lessons-intro-right { padding: 48px 28px; }
+      .levels-section { padding: 64px 28px; }
+      .levels-header { grid-template-columns: 1fr; gap: 20px; }
+      .levels-grid { grid-template-columns: 1fr; }
+      .level-number { font-size: 48px; }
+      .curriculum-header { padding: 64px 28px 0; }
+      .curriculum-pillars { grid-template-columns: 1fr; }
+      .pillar { border-right: none; border-bottom: 1px solid rgba(201,165,90,0.12); }
+      .format-section { grid-template-columns: 1fr; }
+      .format-left { padding: 48px 28px; border-right: none; }
+      .format-right { padding: 48px 28px; }
+      .format-option { flex-wrap: wrap; gap: 12px; }
+      .lessons-cta { padding: 64px 28px; grid-template-columns: 1fr; }
+      .lessons-cta .btn-primary { display: block; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="page-hero">
+    <div class="page-eyebrow reveal">Private Instruction</div>
+    <h1 class="reveal">Violin <em>Lessons</em></h1>
+  </div>
+
+  <!-- Intro + Credentials -->
+  <div class="lessons-intro">
+    <div class="lessons-intro-left">
+      <p class="lessons-lead reveal">Learn from a <em>concert-level</em> musician with over 10 years of teaching experience and a Master's Degree in Music.</p>
+      <p class="lessons-body reveal">Anastasiia brings the rigour of a conservatoire education and the warmth of a working performer to every lesson. Whether you are picking up the violin for the first time or preparing for a conservatoire audition, each session is shaped around your goals.</p>
+      <p class="lessons-body reveal">Lessons are offered in person in Calgary, Alberta — for children, teens, and adults at all levels.</p>
+
+      <div class="credential-row">
+        <div class="credential-item reveal">
+          <div class="credential-mark"></div>
+          <div class="credential-text">
+            <strong>Master's Degree in Music</strong>
+            <span>Kharkiv National University of Arts — under Honored Artists of Ukraine</span>
+          </div>
+        </div>
+        <div class="credential-item reveal reveal-delay-1">
+          <div class="credential-mark"></div>
+          <div class="credential-text">
+            <strong>Concertmaster — Calgary Civic Symphony</strong>
+            <span>Current principal chair, Sep 2025 – Ongoing</span>
+          </div>
+        </div>
+        <div class="credential-item reveal reveal-delay-2">
+          <div class="credential-mark"></div>
+          <div class="credential-text">
+            <strong>International 1st Prize Laureate × 2</strong>
+            <span>VII Musical Universe & VI Music Modern competitions, 2021</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lessons-intro-right">
+      <div class="section-label reveal">Why Study With Anastasiia</div>
+      <div style="margin-top: 12px;">
+        <div class="training-item reveal" style="display:flex;gap:28px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(247,243,236,0.06);">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold);min-width:28px;padding-top:3px;">01</div>
+          <div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ivory);margin-bottom:6px;">Conservatoire Foundations</div>
+            <div style="font-size:13px;color:rgba(247,243,236,0.44);line-height:1.75;">Solid technique built on the Eastern European classical tradition — precise bowing, intonation, and posture from day one.</div>
+          </div>
+        </div>
+        <div class="training-item reveal reveal-delay-1" style="display:flex;gap:28px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(247,243,236,0.06);">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold);min-width:28px;padding-top:3px;">02</div>
+          <div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ivory);margin-bottom:6px;">Tailored to Every Student</div>
+            <div style="font-size:13px;color:rgba(247,243,236,0.44);line-height:1.75;">Repertoire and pacing chosen for your age, experience, and musical interests — no one-size-fits-all syllabus.</div>
+          </div>
+        </div>
+        <div class="training-item reveal reveal-delay-2" style="display:flex;gap:28px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(247,243,236,0.06);">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold);min-width:28px;padding-top:3px;">03</div>
+          <div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ivory);margin-bottom:6px;">Active Performing Musician</div>
+            <div style="font-size:13px;color:rgba(247,243,236,0.44);line-height:1.75;">Learning from someone still on stage brings real-world insight into performance, nerves, and musical expression.</div>
+          </div>
+        </div>
+        <div class="training-item reveal reveal-delay-3" style="display:flex;gap:28px;align-items:flex-start;padding:20px 0;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold);min-width:28px;padding-top:3px;">04</div>
+          <div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ivory);margin-bottom:6px;">Exam & Audition Preparation</div>
+            <div style="font-size:13px;color:rgba(247,243,236,0.44);line-height:1.75;">Structured preparation for RCM exams, school auditions, youth orchestra trials, and festival competitions.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Levels -->
+  <div class="levels-section">
+    <div class="levels-header">
+      <div>
+        <div class="section-label reveal">Levels Taught</div>
+        <h2 class="reveal">Who I<br><em>Teach</em></h2>
+      </div>
+      <p class="levels-sub reveal">From a child's very first bow hold to advanced repertoire and competition preparation — all ages and levels are welcome. Every student begins with a complimentary assessment lesson.</p>
+    </div>
+
+    <div class="levels-grid">
+      <div class="level-card reveal">
+        <div class="level-number">01</div>
+        <div class="level-title">Beginner</div>
+        <div class="level-subtitle">Ages 5+ · Adults Welcome</div>
+        <p class="level-desc">No experience necessary. We start with posture, bow hold, open strings, and simple melodies — building confidence and a lifelong love of music.</p>
+        <ul class="level-list">
+          <li>Instrument sizing & setup guidance</li>
+          <li>Proper posture & bow technique</li>
+          <li>Note reading & basic music theory</li>
+          <li>First repertoire pieces</li>
+          <li>Relaxed, encouraging pace</li>
+        </ul>
+      </div>
+      <div class="level-card reveal reveal-delay-1">
+        <div class="level-number">02</div>
+        <div class="level-title">Intermediate</div>
+        <div class="level-subtitle">Grades 3–7 · RCM Aligned</div>
+        <p class="level-desc">Building on existing skills with a focus on tone production, shifting, vibrato, and expanding repertoire into classical and contemporary works.</p>
+        <ul class="level-list">
+          <li>Vibrato development & shifting</li>
+          <li>Scales, arpeggios & études</li>
+          <li>Classical & modern repertoire</li>
+          <li>RCM examination preparation</li>
+          <li>Chamber & ensemble skills</li>
+        </ul>
+      </div>
+      <div class="level-card reveal reveal-delay-2">
+        <div class="level-number">03</div>
+        <div class="level-title">Advanced</div>
+        <div class="level-subtitle">Grades 8+ · Pre-Conservatoire</div>
+        <p class="level-desc">Serious students preparing for conservatoire auditions, youth orchestra trials, or competitions. Demanding repertoire with concert-level attention to detail.</p>
+        <ul class="level-list">
+          <li>Concerto & sonata repertoire</li>
+          <li>Advanced bowing techniques</li>
+          <li>Performance psychology & stage craft</li>
+          <li>Audition & competition coaching</li>
+          <li>Music theory at post-secondary level</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Curriculum pillars -->
+  <div class="curriculum-section">
+    <div class="curriculum-header">
+      <div class="section-label reveal">What You'll Learn</div>
+      <h2 class="reveal">Four Pillars of<br><em>Every Lesson</em></h2>
+    </div>
+    <div class="curriculum-pillars">
+      <div class="pillar reveal">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">Technique</div>
+        <p class="pillar-desc">Bowing mechanics, left-hand precision, intonation, shifting, vibrato, and tone production — the physical foundations that make everything else possible.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-1">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">Music Theory</div>
+        <p class="pillar-desc">Reading notation, understanding keys and harmony, rhythm literacy, and the theoretical knowledge that turns a player into a musician.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-2">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">Repertoire</div>
+        <p class="pillar-desc">Works chosen to challenge and delight — from Suzuki and Bach to Romantic concertos and contemporary Canadian composers.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-3">
+        <div class="pillar-num">04</div>
+        <div class="pillar-title">Performance</div>
+        <p class="pillar-desc">Stage presence, managing nerves, communicating musically, and the confidence to share your playing — because music is meant to be heard.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Format -->
+  <div class="format-section">
+    <div class="format-left">
+      <div class="section-label reveal">Lesson Format</div>
+      <h2 class="reveal">In-Person<br><em>Calgary</em></h2>
+      <div class="format-options reveal">
+        <div class="format-option">
+          <div>
+            <div class="format-duration">30 min</div>
+            <div class="format-label">Foundation</div>
+          </div>
+          <div class="format-badge">Ages 5–8</div>
+        </div>
+        <div class="format-option">
+          <div>
+            <div class="format-duration">45 min</div>
+            <div class="format-label">Standard</div>
+          </div>
+          <div class="format-badge">Beginner – Intermediate</div>
+        </div>
+        <div class="format-option">
+          <div>
+            <div class="format-duration">60 min</div>
+            <div class="format-label">Extended</div>
+          </div>
+          <div class="format-badge">Intermediate – Advanced</div>
+        </div>
+      </div>
+    </div>
+    <div class="format-right">
+      <div class="section-label reveal">Practical Details</div>
+      <ul class="format-details-list">
+        <li class="reveal">
+          <span class="fd-label">Location</span>
+          <span class="fd-value">In-person lessons in Calgary, Alberta. Studio address provided upon booking.</span>
+        </li>
+        <li class="reveal reveal-delay-1">
+          <span class="fd-label">Trial</span>
+          <span class="fd-value">A complimentary 30-minute assessment is offered to all new students before committing to a regular schedule.</span>
+        </li>
+        <li class="reveal reveal-delay-2">
+          <span class="fd-label">Schedule</span>
+          <span class="fd-value">Weekly lessons available on weekday evenings and Saturdays. Flexible scheduling discussed at booking.</span>
+        </li>
+        <li class="reveal reveal-delay-3">
+          <span class="fd-label">Instrument</span>
+          <span class="fd-value">Guidance on renting or purchasing the right instrument provided free of charge to new students.</span>
+        </li>
+        <li class="reveal reveal-delay-4">
+          <span class="fd-label">Exams</span>
+          <span class="fd-value">RCM examination preparation available. Students are supported through practical and theory requirements.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="lessons-cta">
+    <div class="lessons-cta-text">
+      <div class="section-label reveal">Start Your Journey</div>
+      <h2 class="reveal">Book a <em>Trial Lesson</em></h2>
+      <p class="reveal">Reach out to arrange a complimentary 30-minute assessment — no commitment required. Spots are limited; lessons fill on a first-come basis.</p>
+    </div>
+    <div class="reveal">
+      <a href="contact.html" class="btn-primary">Get in Touch</a>
+    </div>
+  </div>
+
+</div>
+<script src="shared.js"></script>
+</body>
+</html>

@@ -6,6 +6,7 @@
     { href: 'index.html',    label: 'Home' },
     { href: 'about.html',    label: 'About' },
     { href: 'services.html', label: 'Services' },
+    { href: 'lessons.html',  label: 'Lessons' },
     { href: 'gallery.html',  label: 'Gallery' },
     { href: 'events.html',   label: 'Events' },
     { href: 'contact.html',  label: 'Contact' },
@@ -19,8 +20,26 @@
         <li><a href="${l.href}" class="${currentPage === l.href ? 'active' : ''}">${l.label}</a></li>
       `).join('')}
     </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   `;
   document.body.prepend(nav);
+
+  // Hamburger toggle
+  const hamburger = nav.querySelector('.nav-hamburger');
+  hamburger.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('nav-open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  // Close menu when a link is clicked
+  nav.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('nav-open');
+      document.body.style.overflow = '';
+    });
+  });
 
   const footer = document.createElement('footer');
   footer.innerHTML = `
