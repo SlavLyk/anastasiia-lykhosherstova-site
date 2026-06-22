@@ -63,55 +63,6 @@
   --text-muted: var(--tx-50);
 }
 
-/* ── LIGHT THEME ── */
-/*
-  Palette: cool-neutral stone white
-  Gold (#C9A55A) pops against these because of hue contrast —
-  warm gold vs. neutral-cool surface — not just lightness contrast.
-  Think luxury gallery walls, fine art print paper, high-fashion editorial.
-*/
-[data-theme="light"] {
-  --dark: #fffff5;       /* near-pure white, faint warmth — main page bg */
-  --charcoal: #f8f3e3;   /* warm secondary surfaces                       */
-  --mid: #f0ead8;        /* cards, elevated surfaces                      */
-  --ivory: #1c1b1a;      /* dark charcoal — primary text                  */
-  --cream: #e4ddc8;      /* dividers, deeper accents                      */
-
-  --tx-88: rgba(28,27,26,0.88);
-  --tx-85: rgba(28,27,26,0.85);
-  --tx-80: rgba(28,27,26,0.80);
-  --tx-60: rgba(28,27,26,0.70);
-  --tx-58: rgba(28,27,26,0.68);
-  --tx-55: rgba(28,27,26,0.65);
-  --tx-52: rgba(28,27,26,0.62);
-  --tx-50: rgba(28,27,26,0.60);
-  --tx-48: rgba(28,27,26,0.58);
-  --tx-45: rgba(28,27,26,0.55);
-  --tx-44: rgba(28,27,26,0.54);
-  --tx-40: rgba(28,27,26,0.50);
-  --tx-38: rgba(28,27,26,0.48);
-  --tx-35: rgba(28,27,26,0.44);
-  --tx-30: rgba(28,27,26,0.40);
-  --tx-28: rgba(28,27,26,0.38);
-  --tx-25: rgba(28,27,26,0.35);
-  --tx-22: rgba(28,27,26,0.32);
-  --tx-20: rgba(28,27,26,0.30);
-  --tx-18: rgba(28,27,26,0.28);
-  --tx-12: rgba(28,27,26,0.20);
-  --tx-10: rgba(28,27,26,0.16);
-  --tx-08: rgba(28,27,26,0.14);
-  --tx-07: rgba(28,27,26,0.12);
-  --tx-06: rgba(28,27,26,0.10);
-  --tx-05: rgba(28,27,26,0.08);
-
-  --ov-nav: rgba(255,255,245,0.96);
-  --ov-97: rgba(255,255,245,0.97);
-  --ov-card: rgba(248,243,227,0.90);
-  --ov-card-hover: rgba(240,234,216,0.96);
-  --ov-cta: rgba(255,255,245,0.93);
-  --bg-input: rgba(0,0,0,0.04);
-}
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -148,13 +99,13 @@ nav {
 }
 .nav-logo span { color: var(--gold); }
 .nav-links {
-  display: flex; gap: 40px;
+  display: flex; gap: 30px;
   list-style: none;
 }
 .nav-links a {
   color: var(--tx-55);
   text-decoration: none;
-  font-size: 11px;
+  font-size: 15px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding-bottom: 2px;
@@ -166,34 +117,6 @@ nav {
   color: var(--gold);
   border-bottom-color: var(--gold);
 }
-
-/* ── THEME TOGGLE ── */
-.theme-toggle {
-  background: none;
-  border: 1px solid var(--gd-30);
-  color: var(--gold);
-  width: 34px; height: 34px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  transition: border-color 0.25s, background 0.25s;
-}
-.theme-toggle:hover {
-  background: var(--gd-08);
-  border-color: var(--gold);
-}
-.theme-toggle svg {
-  width: 14px; height: 14px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-}
-.icon-sun { display: block; }
-.icon-moon { display: none; }
-[data-theme="light"] .icon-sun { display: none; }
-[data-theme="light"] .icon-moon { display: block; }
 
 /* ── PAGE WRAPPER ── */
 .page {
@@ -207,7 +130,7 @@ nav {
   border-bottom: 1px solid var(--gd-12);
 }
 .page-eyebrow {
-  font-size: 10px;
+  font-size: 21px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold);
@@ -243,7 +166,7 @@ h3 {
 
 /* ── COMMON ── */
 .section-label {
-  font-size: 10px;
+  font-size: 21px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold);
@@ -266,7 +189,7 @@ h3 {
   color: var(--dark);
   padding: 14px 36px;
   font-family: 'Jost', sans-serif;
-  font-size: 11px;
+  font-size: 21px;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -279,7 +202,7 @@ h3 {
 
 .btn-ghost {
   color: var(--tx-60);
-  font-size: 11px;
+  font-size: 21px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   text-decoration: none;
@@ -311,7 +234,7 @@ footer {
   display: flex; gap: 32px; list-style: none;
 }
 .footer-links a {
-  font-size: 10px; letter-spacing: 0.18em;
+  font-size: 15px; letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--tx-30);
   text-decoration: none;
@@ -342,7 +265,7 @@ footer {
   fill: currentColor;
 }
 .footer-copy {
-  font-size: 11px;
+  font-size: 21px;
   color: var(--tx-20);
 }
 
@@ -362,7 +285,7 @@ footer {
 .form-group { margin-bottom: 18px; }
 .form-group label {
   display: block;
-  font-size: 10px; letter-spacing: 0.2em;
+  font-size: 21px; letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--tx-45);
   margin-bottom: 10px;
@@ -376,7 +299,7 @@ footer {
   color: var(--ivory);
   padding: 14px 18px;
   font-family: 'Jost', sans-serif;
-  font-size: 13px;
+  font-size: 21px;
   font-weight: 300;
   outline: none;
   transition: border-color 0.25s;
@@ -393,18 +316,15 @@ footer {
 /* ── HAMBURGER (hidden on desktop) ── */
 .nav-hamburger { display: none; }
 
-/* ── NAV RESPONSIVE — hamburger kicks in at 1024px ── */
-@media (max-width: 1024px) {
+/* ── NAV RESPONSIVE — hamburger kicks in at 1280px (covers all iPad widths) ── */
+@media (max-width: 1280px) {
   nav { padding: 18px 28px; }
-
-  /* Pin toggle to the right in both open and closed states */
-  .theme-toggle { margin-left: auto; margin-right: 10px; }
 
   /* Hamburger icon */
   .nav-hamburger {
     display: flex; flex-direction: column; gap: 5px;
     background: none; border: none; cursor: pointer; padding: 4px;
-    flex-shrink: 0; z-index: 1;
+    flex-shrink: 0; z-index: 1; margin-left: auto;
   }
   .nav-hamburger span {
     width: 22px; height: 1px; background: var(--ivory);
@@ -428,7 +348,6 @@ footer {
     overflow: hidden;
   }
   nav.nav-open .nav-logo      { order: 1; align-self: center; }
-  nav.nav-open .theme-toggle  { order: 2; align-self: center; }
   nav.nav-open .nav-hamburger { order: 3; align-self: center; }
 
   /* Nav links — hidden by default */
@@ -472,7 +391,7 @@ footer {
 }
 
 /* ── OTHER MOBILE FIXES ── */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .page { padding-top: 62px; }
 }
 

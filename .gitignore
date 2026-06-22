@@ -1,0 +1,5 @@
+.vercel
+.env*
+.DS_Store
+image.png
+telegram-cloud-document-*.jpg
