@@ -8,6 +8,7 @@
     { href: 'services.html', label: 'Services' },
     { href: 'lessons.html',  label: 'Lessons' },
     { href: 'gallery.html',  label: 'Gallery' },
+    { href: 'videos.html',   label: 'Videos' },
     { href: 'events.html',   label: 'Events' },
     { href: 'contact.html',  label: 'Contact' },
   ];

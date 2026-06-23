@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videos, Anastasiia Lykhosherstova</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .videos-page { padding: 0 72px 96px; }
+
+    .videos-intro {
+      padding: 52px 0 40px;
+      margin-bottom: 48px;
+      border-bottom: 1px solid var(--gd-12);
+    }
+    .videos-sub {
+      font-size: 21px; line-height: 1.8;
+      color: var(--tx-55);
+      max-width: 560px;
+    }
+
+    /* Video grid */
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 56px 36px;
+    }
+
+    .video-thumb {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--charcoal) 0%, var(--mid) 55%, rgba(201,165,90,0.16) 100%);
+      border: 1px solid var(--gd-15);
+      cursor: pointer;
+    }
+    .video-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      filter: grayscale(15%) brightness(0.82);
+      transition: transform 0.6s ease, filter 0.4s;
+    }
+    .video-thumb:hover img {
+      transform: scale(1.05);
+      filter: grayscale(0) brightness(1);
+    }
+    .video-thumb iframe {
+      width: 100%; height: 100%;
+      border: 0; display: block;
+    }
+    /* darkening wash so the gold button reads on any frame */
+    .video-thumb::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: rgba(17,16,16,0.18);
+      transition: background 0.3s;
+      pointer-events: none;
+    }
+    .video-thumb:hover::after { background: rgba(17,16,16,0.05); }
+    .video-thumb.playing::after { display: none; }
+
+    .video-play {
+      position: absolute; inset: 0; margin: auto;
+      width: 74px; height: 74px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--gold);
+      border: none; border-radius: 50%;
+      cursor: pointer; z-index: 2;
+      box-shadow: 0 12px 44px rgba(0,0,0,0.45);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+    .video-thumb:hover .video-play {
+      transform: scale(1.09);
+      background: var(--gold-light);
+    }
+    .video-play svg {
+      width: 26px; height: 26px;
+      fill: var(--dark);
+      margin-left: 5px; /* optical centering of the triangle */
+    }
+
+    .video-meta { padding: 22px 2px 0; }
+    .video-desc {
+      font-size: 21px; line-height: 1.6;
+      color: var(--tx-45);
+      max-width: 90%;
+    }
+
+    .videos-cta {
+      margin-top: 80px;
+      padding-top: 60px;
+      border-top: 1px solid var(--gd-12);
+      display: flex; align-items: center; justify-content: space-between; gap: 40px;
+    }
+    .videos-cta p {
+      font-size: 21px; color: var(--tx-45);
+      max-width: 420px; line-height: 1.7;
+    }
+
+    @media (max-width: 860px) {
+      .videos-page { padding: 0 28px 72px; }
+      .videos-intro { padding: 36px 0 28px; margin-bottom: 36px; }
+      .videos-grid { grid-template-columns: 1fr; gap: 44px; }
+      .videos-cta { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="page-hero">
+    <div class="page-eyebrow reveal">Performances</div>
+    <h1 class="reveal">Featured <em>Videos</em></h1>
+  </div>
+
+  <div class="videos-page">
+    <div class="videos-intro reveal">
+      <p class="videos-sub">A selection of live performances and studio recordings. Press play to watch, each video opens here on the page.</p>
+    </div>
+
+    <!--
+      CUSTOM THUMBNAILS:
+      Each video shows your own cover image, set in the img src below.
+      Drop an image into the project folder and point src at it, e.g. src="video-cover-1.jpg".
+      If the image is missing, an on-brand gold gradient cover shows instead.
+      data-id is the YouTube video ID (the part after youtu.be/ or watch?v=).
+    -->
+    <div class="videos-grid" id="videosGrid">
+
+      <div class="video-card reveal">
+        <div class="video-thumb" data-id="nSM7h-9dBy0">
+          <img src="video-cover-1.jpg" alt="" loading="lazy"
+               onerror="this.onerror=null;this.style.display='none'">
+          <button type="button" class="video-play" aria-label="Play video">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+        </div>
+        <div class="video-meta">
+          <p class="video-desc">Short description of the piece or event.</p>
+        </div>
+      </div>
+
+      <div class="video-card reveal reveal-delay-1">
+        <div class="video-thumb" data-id="egFA5I_AvuY">
+          <img src="video-cover-2.jpg" alt="" loading="lazy"
+               onerror="this.onerror=null;this.style.display='none'">
+          <button type="button" class="video-play" aria-label="Play video">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+        </div>
+        <div class="video-meta">
+          <p class="video-desc">Short description of the piece or event.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="videos-cta">
+      <p class="reveal">Interested in a live performance for your event?</p>
+      <a href="contact.html" class="btn-primary reveal">Book a Performance</a>
+    </div>
+  </div>
+
+</div>
+<script src="shared.js"></script>
+<script>
+  // Click to play: swap the thumbnail for the YouTube player (muted off, autoplay on click)
+  document.querySelectorAll('.video-thumb').forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      const id = thumb.dataset.id;
+      if (!id || thumb.classList.contains('playing')) return;
+      thumb.classList.add('playing');
+      thumb.innerHTML =
+        '<iframe src="https://www.youtube.com/embed/' + id +
+        '?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="Video" ' +
+        'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+        'allowfullscreen></iframe>';
+    });
+  });
+</script>
+</body>
+</html>

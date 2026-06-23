@@ -40,7 +40,6 @@ export default async function handler(req, res) {
         name:  p['Event Name'].title[0]?.plain_text ?? '',
         date:  p['Date'].date?.start ?? '',
         loc:   p['Location'].rich_text[0]?.plain_text ?? '',
-        type:  p['Type'].select?.name ?? '',
       };
     });
 
